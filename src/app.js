@@ -35,9 +35,24 @@ let form = document.querySelector("form");
 form.addEventListener("submit", search);
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = `<strong>${temperature}°</strong>`;
+let temperature = Math.round(response.data.main.temp);
+let temperatureElement = document.querySelector("#current-temp");
+let countryElemnt=document.querySelector("#country");
+let cityElement=document.querySelector("#city");
+let humidityElement=document.querySelector("#humidity");
+let windElement=document.querySelector("#wind");
+let iconElement = document.querySelector("#icon-big-temp");
+
+
+temperatureElement.innerHTML = `<strong>${temperature}°</strong>`;
+ iconElement.setAttribute("src", `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=062ee53ba479dd4cf0o7c643141865td`); 
+let key="062ee53ba479dd4cf0o7c643141865td";
+
+cityElement.innerHTML=response.data.city;
+countryElemnt.innerHTML=response.data.country;
+humidityElement.innerHTML= response.data.temperature.humidity;
+windElement.innerHTML=Math.round(response.data.wind.speed);
+
 }
 
 function searchTemp(event) {

@@ -66,13 +66,20 @@
               <h1>Denver</h1>
 
               <h2>Thursday 10:45, clear sky</h2>
-              <h3>Humidity: 67%, Wind: 1.17 km/h</h3>
+              <div>
+              <h3>Humidity: <span id="humidity">20</span>%,</h3>
+                <h3>Wind: <span id="wind">1.17</span>km/h</h3>
+                </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-7">
               <div class="big-temperature">
-                <i class="fa-solid fa-sun"></i>
-            <span id="current-temp">15</span>C
+                <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                alt="clear"
+                id="icon-big-temp"
+                class="float-left">
+            <span id="current-temp">15°</span>C
               </div>
             </div>
           </div>
