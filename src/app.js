@@ -1,20 +1,34 @@
 
 let now = new Date();
-let date = now.getDate(timestamp);
+let date = now.getDate();
 let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
 let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
 let year = now.getFullYear();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 let day = days[now.getDay()];
-;
-return `${day} ${hours}:${minutes}`;
+	let months = [
+    "Jan",
+"Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
+	let month = months[now.getMonth()];
+let h2 = document.querySelector("h2");
+h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}, ${year}`;
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text");
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${searchInput.value}`;
 }
-
 
 
 let form = document.querySelector("form");
