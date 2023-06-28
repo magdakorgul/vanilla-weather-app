@@ -23,12 +23,38 @@ let day = days[now.getDay()];
 	let month = months[now.getMonth()];
 let h2 = document.querySelector("h2");
 h2.innerHTML = `${day}, ${month} ${date}, ${hours}:${minutes}, ${year}`;
+
+
+function displayForecast(response){
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+let forecastElement = "Hello";
+forecastHTML = forecastHTML + `
+  <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              Thu
+              <br />
+              <i class="fa-solid fa-sun"></i>
+              <br />
+              15°C
+            </div>
+            </div>
+            </div>`
+
+forecastElement.innerHTML = forecastHTML;
+
+
+}
+
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text");
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${searchInput.value}`;
 }
+
 
 
 let form = document.querySelector("form");
@@ -42,6 +68,7 @@ let cityElement=document.querySelector("#city");
 let humidityElement=document.querySelector("#humidity");
 let windElement=document.querySelector("#wind");
 let iconElement = document.querySelector("#icon-big-temp");
+
 
 
 temperatureElement.innerHTML = `<strong>${temperature}°</strong>`;
@@ -66,3 +93,4 @@ function searchTemp(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchTemp);
 
+displayForecast();

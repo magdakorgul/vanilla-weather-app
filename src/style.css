@@ -20,6 +20,12 @@ h3 {
 h3 {
     margin: 0 0 30px;
 }
+ul {
+    list-style: none;
+    color: rgb(154, 154, 154);
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+}
 
 .big-temperature {
     color: rgb(0, 0, 0);
