@@ -90,3 +90,12 @@ form {
 i {
     color: #000000;
 }
+.weather-forecast-temperatures{
+    color: rgb(0, 0, 0);
+}
+.weather-forecast-temperature-min{
+    color: gray;
+}
+.humidity, .wind{
+    color:black;
+}

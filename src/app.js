@@ -54,7 +54,7 @@ function displayForecast(response) {
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
           forecastDay.temp.max
-          )}° </span>
+          )}° | </span>
           <span class="weather-forecast-temperature-min"> ${Math.round(
           forecastDay.temp.min
           )}° </span>
@@ -115,6 +115,7 @@ function searchTemp(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchTemp);
